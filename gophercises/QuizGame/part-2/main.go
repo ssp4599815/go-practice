@@ -1,12 +1,7 @@
 package main
 
 import (
-	"encoding/csv"
-	"fmt"
-	"log"
-	"os"
 	"strings"
-	"time"
 )
 
 type problem struct {
@@ -25,37 +20,37 @@ func parseLines(lines [][]string) []problem {
 	}
 	return ret
 }
-
-func main() {
-	file, err := os.Open("problems.csv")
-	if err != nil {
-		log.Fatal(err)
-	}
-	r := csv.NewReader(file)
-	lines, err := r.ReadAll()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	var (
-		timeLimit = 30
-		correct   = 0
-	)
-	problems := parseLines(lines)
-	timer := time.NewTimer(time.Duration(timeLimit) * time.Second)
-
-problemloop:
-	for i, p := range problems {
-		fmt.Printf("Problem #%d: %s = ", i+1, p.q)
-		answerCh := make(chan string)
-
-		go func() {
-			xxx
-		}()
-
-		select {
-		xxx
-		}
-	}
-
-}
+//
+//func main() {
+//	file, err := os.Open("problems.csv")
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//	r := csv.NewReader(file)
+//	lines, err := r.ReadAll()
+//	if err != nil {
+//		log.Fatal(err)
+//	}
+//
+//	var (
+//		timeLimit = 30
+//		correct   = 0
+//	)
+//	problems := parseLines(lines)
+//	timer := time.NewTimer(time.Duration(timeLimit) * time.Second)
+//
+//problemloop:
+//	for i, p := range problems {
+//		fmt.Printf("Problem #%d: %s = ", i+1, p.q)
+//		answerCh := make(chan string)
+//
+//		go func() {
+//			xxx
+//		}()
+//
+//		select {
+//		xxx
+//		}
+//	}
+//
+//}
